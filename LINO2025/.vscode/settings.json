@@ -1,0 +1,7 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "ATIVIDADE01.C": "cpp",
+        "EX01.C": "cpp"
+    }
+}
