@@ -1,0 +1,304 @@
+/* =====================
+   CABEÇALHO
+   ===================== */
+.header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  padding: var(--spacing-xl) var(--spacing-md);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: var(--transition-base);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  flex-wrap: wrap;
+}
+
+.logo-area h1 {
+  color: white;
+  margin: 0;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.nav-main {
+  display: flex;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: var(--transition-fast);
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  color: var(--color-accent);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* =====================
+   SEÇÃO SERVIÇOS
+   ===================== */
+.servicos {
+  padding: var(--spacing-3xl) var(--spacing-md);
+  background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+}
+
+.servicos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.servicos h2 {
+  text-align: center;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.servicos-subtitle {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-3xl);
+}
+
+/* =====================
+   GRID DE SERVIÇOS
+   ===================== */
+.grid-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
+}
+
+/* =====================
+   CARD DE SERVIÇO
+   ===================== */
+.card-servico {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  transition: var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-servico::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  transformation: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition-base);
+}
+
+.card-servico:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+  transform: translateY(-6px);
+}
+
+.card-servico:hover::before {
+  transform: scaleX(1);
+}
+
+.card-servico h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-xl);
+}
+
+.card-servico p {
+  flex: 1;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  line-height: 1.8;
+}
+
+/* =====================
+   BOTÕES
+   ===================== */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: white;
+  font-weight: 600;
+  padding: var(--spacing-sm) var(--spacing-xl);
+  margin-top: auto;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+  cursor: pointer;
+  border: none;
+  align-self: flex-start;
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* =====================
+   RODAPÉ
+   ===================== */
+.footer {
+  background: var(--color-text-primary);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  margin-top: auto;
+  font-size: var(--font-size-sm);
+}
+
+.footer p {
+  color: white;
+  margin: 0;
+}
+
+/* =====================
+   RESPONSIVIDADE
+   ===================== */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  
+  .logo-area h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .nav-main {
+    gap: var(--spacing-lg);
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .servicos {
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+  
+  .grid-servicos {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .card-servico {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .logo-area h1 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .nav-main {
+    gap: var(--spacing-md);
+    flex-direction: column;
+  }
+  
+  .nav-link {
+    font-size: var(--font-size-xs);
+  }
+  
+  .servicos {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+  
+  .servicos h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .grid-servicos {
+    gap: var(--spacing-md);
+  }
+  
+  .card-servico {
+    padding: var(--spacing-md);
+  }
+  
+  .btn-primary {
+    width: 100%;
+    align-self: stretch;
+  }
+}
+
+/* =====================
+   MODO ESCURO
+   ===================== */
+@media (prefers-color-scheme: dark) {
+  .card-servico {
+    background: var(--color-bg-secondary);
+    border-color: var(--color-border);
+  }
+  
+  .card-servico:hover {
+    border-color: var(--color-primary-light);
+  }
+  
+  .servicos {
+    background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  }
+}
