@@ -1,0 +1,29 @@
+{
+  "name": "securelogin-api",
+  "version": "1.0.0",
+  "description": "API de autenticação segura com testes unitários e estruturais",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest --coverage",
+    "test:unit": "jest tests/loginValidator.test.js --coverage",
+    "test:structural": "jest tests/loginController.test.js --coverage"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageReporters": ["text", "lcov"],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/server.js"
+    ]
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  },
+  "author": "",
+  "license": "ISC"
+}
