@@ -1,0 +1,14 @@
+{
+  "name": "teste-selenium-login",
+  "version": "1.0.0",
+  "description": "Teste automatizado de login com Selenium WebDriver",
+  "main": "test.js",
+  "scripts": {
+    "test": "node test.js",
+    "test:avancado": "node test-avancado.js"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.27.0",
+    "chromedriver": "^131.0.0"
+  }
+}
